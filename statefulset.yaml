@@ -4,15 +4,15 @@ metadata:
   name: redis-statefulset
   namespace: redis-cluster
 spec:
-  serviceName: redis-cluster
+  serviceName: redis
   replicas: 6
   selector:
     matchLabels:
-      app: redis-cluster
+      app: redis
   template:
     metadata:
       labels:
-        app: redis-cluster
+        app: redis
     spec:
       containers:
       - name: redis
