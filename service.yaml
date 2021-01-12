@@ -4,7 +4,7 @@ metadata:
   name: redis-service
   namespace: redis-cluster
 spec:
-  type: NodePort
+  #type: NodePort
   selector:
     app: redis
   ports:
@@ -12,4 +12,6 @@ spec:
     protocol: TCP
     port: 6379
     targetPort: 6379
-    nodePort: 31379  
+    #nodePort: 31379  
+  externalIPs:
+    - 10.10.101.155
