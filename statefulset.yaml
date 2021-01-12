@@ -23,7 +23,6 @@ spec:
         - containerPort: 16379
           name: gossip
         command: ["/conf/update-node.sh", "redis-server", "/conf/redis.conf"]
-        args: ["-c", "echo aaa"]
         env:
         - name: POD_IP
           valueFrom:
