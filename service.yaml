@@ -14,4 +14,4 @@ spec:
     targetPort: 6379
     #nodePort: 31379  
   externalIPs:
-    - 10.10.101.155
+    - 10.10.101.147
