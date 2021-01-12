@@ -22,18 +22,19 @@ spec:
           name: client
         - containerPort: 16379
           name: gossip
-        command: ["/conf/update-node.sh", "redis-server", "/conf/redis.conf"]
+        command: ["/conf/update-node.sh", "redis-server", "/conf/redis.conf"]   
+        # command: /conf/update-node.sh redis-server /conf/redis.conf   #執行命令
         env:
         - name: POD_IP
           valueFrom:
             fieldRef:
               fieldPath: status.podIP
         volumeMounts:
-        - name: conf
-          mountPath: /conf
+        - name: conf        #掛載 configmap 產生的文件
+          mountPath: /conf  #掛載到哪個路徑下
           readOnly: false
-        - name: data
-          mountPath: /data
+        - name: data        #掛載 configmap 產生的文件
+          mountPath: /data  #掛載到哪個路徑下
           readOnly: false
       volumes:
       - name: conf
