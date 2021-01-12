@@ -23,7 +23,7 @@ kubectl exec -it -n redis-cluster redis-statefulset-0 -- redis-cli cluster info
 for x in $(seq 0 5); do echo "redis-statefulset-$x"; kubectl exec -n redis-cluster redis-statefulset-$x -- redis-cli role; echo; done
 
 ### 測試，連其中一台
-kubectl exec -it -n redis-cluster redis-statefulset-0 -- redis-cli -c
+kubectl exec -it -n redis-cluster redis-statefulset-0 -- redis-cli -c  
 
-SET keyA 123 EX 30
-GET keyA
+SET keyA 123 EX 30  
+GET keyA  
